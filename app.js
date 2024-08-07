@@ -4,7 +4,9 @@ const  sequelize  = require('./config/database')
 const route  = require('./routes/allRoutes')
 const logger = require('morgan')
 const app = express()
+const dotenv = require("dotenv")
 
+dotenv.config();
 app.use(bodyParser.json());
 app.use(logger("dev"));
 app.use('/api', route)
